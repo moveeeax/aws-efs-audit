@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+/.venv/
+/venv/
+/build/
+/dist/
+/src/*.egg-info/
+/.pytest_cache/
+/.ruff_cache/
+/.coverage
+/htmlcov/
+
+# recorded payloads from --dump-json; the committed fixtures stay tracked
+/*.dump.json
+!tests/fixtures/**
+!examples/**

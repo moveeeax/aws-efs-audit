@@ -1,0 +1,28 @@
+# Every threshold the rule engine reads, with its default value.
+# Pass this file with --rules to override any subset of it.
+
+# Standard-class GB above which a missing lifecycle policy is critical, not warn.
+ia_threshold_gb: 100
+
+# TransitionToIA of AFTER_<this>_DAYS or later is a finding on cold data.
+late_transition_days: 90
+
+# The setting the fix recommends instead.
+recommended_transition: AFTER_30_DAYS
+
+# Measured MiB/s per 100 GB below which data counts as cold.
+cold_mibps_per_100gb: 0.5
+
+# Provisioned throughput above measured average times this factor is overspend.
+provisioned_overspend_factor: 2.0
+
+# Fewer mount target availability zones than this is a single-AZ dependency.
+min_mount_target_azs: 2
+
+# USD per month, list prices. EFS pricing is regional: set these for your region.
+price_standard_gb_month: 0.30
+price_ia_gb_month: 0.016
+price_provisioned_mibps_month: 6.00
+
+# The NFS port the security group rules look for.
+nfs_port: 2049

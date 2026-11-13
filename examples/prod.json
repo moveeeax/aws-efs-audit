@@ -1,0 +1,403 @@
+{
+  "version": 1,
+  "generated_at": "2026-11-13T09:00:00Z",
+  "regions": {
+    "eu-central-1": {
+      "filesystems": [
+        {
+          "FileSystemId": "fs-0a1b2c3d4e5f60001",
+          "Name": "shared-uploads",
+          "Encrypted": true,
+          "KmsKeyId": "arn:aws:kms:eu-central-1:111122223333:key/abc",
+          "ThroughputMode": "bursting",
+          "ProvisionedThroughputInMibps": null,
+          "PerformanceMode": "generalPurpose",
+          "LifeCycleState": "available",
+          "CreationTime": "2023-04-01T09:12:00Z",
+          "SizeInBytes": {
+            "Value": 429496729600,
+            "ValueInIA": 0,
+            "ValueInStandard": 429496729600
+          },
+          "Tags": {
+            "Name": "shared-uploads",
+            "team": "platform"
+          },
+          "MountTargets": [
+            {
+              "MountTargetId": "fsmt-0001",
+              "SubnetId": "subnet-a",
+              "AvailabilityZoneName": "eu-central-1a",
+              "IpAddress": "10.0.1.10",
+              "LifeCycleState": "available",
+              "SecurityGroups": [
+                "sg-clients"
+              ]
+            }
+          ],
+          "LifecycleConfiguration": [],
+          "BackupPolicy": "DISABLED",
+          "FileSystemPolicy": null,
+          "AccessPoints": [],
+          "Metrics": {
+            "MeteredIOBytesAvgMibps": 0.11,
+            "MetricWindowDays": 14
+          }
+        },
+        {
+          "FileSystemId": "fs-0a1b2c3d4e5f60002",
+          "Name": "jenkins-home",
+          "Encrypted": true,
+          "KmsKeyId": "arn:aws:kms:eu-central-1:111122223333:key/abc",
+          "ThroughputMode": "bursting",
+          "ProvisionedThroughputInMibps": null,
+          "PerformanceMode": "generalPurpose",
+          "LifeCycleState": "available",
+          "CreationTime": "2023-04-01T09:12:00Z",
+          "SizeInBytes": {
+            "Value": 128849018880,
+            "ValueInIA": 102005473280,
+            "ValueInStandard": 26843545600
+          },
+          "Tags": {
+            "Name": "jenkins-home",
+            "team": "ci"
+          },
+          "MountTargets": [
+            {
+              "MountTargetId": "fsmt-0002",
+              "SubnetId": "subnet-a",
+              "AvailabilityZoneName": "eu-central-1a",
+              "IpAddress": "10.0.1.10",
+              "LifeCycleState": "available",
+              "SecurityGroups": [
+                "sg-clients"
+              ]
+            },
+            {
+              "MountTargetId": "fsmt-0003",
+              "SubnetId": "subnet-b",
+              "AvailabilityZoneName": "eu-central-1b",
+              "IpAddress": "10.0.1.10",
+              "LifeCycleState": "available",
+              "SecurityGroups": [
+                "sg-clients"
+              ]
+            },
+            {
+              "MountTargetId": "fsmt-0004",
+              "SubnetId": "subnet-c",
+              "AvailabilityZoneName": "eu-central-1c",
+              "IpAddress": "10.0.1.10",
+              "LifeCycleState": "available",
+              "SecurityGroups": [
+                "sg-clients"
+              ]
+            }
+          ],
+          "LifecycleConfiguration": [
+            {
+              "TransitionToIA": "AFTER_30_DAYS"
+            },
+            {
+              "TransitionToPrimaryStorageClass": "AFTER_1_ACCESS"
+            }
+          ],
+          "BackupPolicy": "ENABLED",
+          "FileSystemPolicy": null,
+          "AccessPoints": [],
+          "Metrics": {
+            "MeteredIOBytesAvgMibps": 3.4,
+            "MetricWindowDays": 14
+          }
+        },
+        {
+          "FileSystemId": "fs-0a1b2c3d4e5f60003",
+          "Name": "legacy-nfs",
+          "Encrypted": false,
+          "KmsKeyId": null,
+          "ThroughputMode": "bursting",
+          "ProvisionedThroughputInMibps": null,
+          "PerformanceMode": "generalPurpose",
+          "LifeCycleState": "available",
+          "CreationTime": "2023-04-01T09:12:00Z",
+          "SizeInBytes": {
+            "Value": 32212254720,
+            "ValueInIA": 0,
+            "ValueInStandard": 32212254720
+          },
+          "Tags": {
+            "Name": "legacy-nfs"
+          },
+          "MountTargets": [
+            {
+              "MountTargetId": "fsmt-0005",
+              "SubnetId": "subnet-a",
+              "AvailabilityZoneName": "eu-central-1a",
+              "IpAddress": "10.0.1.10",
+              "LifeCycleState": "available",
+              "SecurityGroups": [
+                "sg-open"
+              ]
+            },
+            {
+              "MountTargetId": "fsmt-0006",
+              "SubnetId": "subnet-b",
+              "AvailabilityZoneName": "eu-central-1b",
+              "IpAddress": "10.0.2.11",
+              "LifeCycleState": "creating",
+              "SecurityGroups": [
+                "sg-clients"
+              ]
+            }
+          ],
+          "LifecycleConfiguration": [],
+          "BackupPolicy": "DISABLED",
+          "FileSystemPolicy": null,
+          "AccessPoints": [
+            {
+              "AccessPointId": "fsap-0001",
+              "Name": "tenant-a",
+              "RootDirectory": "/tenant-a"
+            },
+            {
+              "AccessPointId": "fsap-0002",
+              "Name": "tenant-b",
+              "RootDirectory": "/tenant-b"
+            }
+          ],
+          "Metrics": {
+            "MeteredIOBytesAvgMibps": 0.02,
+            "MetricWindowDays": 14
+          }
+        },
+        {
+          "FileSystemId": "fs-0a1b2c3d4e5f60004",
+          "Name": "render-scratch",
+          "Encrypted": true,
+          "KmsKeyId": "arn:aws:kms:eu-central-1:111122223333:key/abc",
+          "ThroughputMode": "provisioned",
+          "ProvisionedThroughputInMibps": 256,
+          "PerformanceMode": "maxIO",
+          "LifeCycleState": "available",
+          "CreationTime": "2023-04-01T09:12:00Z",
+          "SizeInBytes": {
+            "Value": 2147483648000,
+            "ValueInIA": 2040109465600,
+            "ValueInStandard": 107374182400
+          },
+          "Tags": {
+            "Name": "render-scratch",
+            "team": "media"
+          },
+          "MountTargets": [
+            {
+              "MountTargetId": "fsmt-0007",
+              "SubnetId": "subnet-a",
+              "AvailabilityZoneName": "eu-central-1a",
+              "IpAddress": "10.0.1.10",
+              "LifeCycleState": "available",
+              "SecurityGroups": [
+                "sg-clients"
+              ]
+            },
+            {
+              "MountTargetId": "fsmt-0008",
+              "SubnetId": "subnet-b",
+              "AvailabilityZoneName": "eu-central-1b",
+              "IpAddress": "10.0.1.10",
+              "LifeCycleState": "available",
+              "SecurityGroups": [
+                "sg-clients"
+              ]
+            },
+            {
+              "MountTargetId": "fsmt-0009",
+              "SubnetId": "subnet-c",
+              "AvailabilityZoneName": "eu-central-1c",
+              "IpAddress": "10.0.1.10",
+              "LifeCycleState": "available",
+              "SecurityGroups": [
+                "sg-clients"
+              ]
+            }
+          ],
+          "LifecycleConfiguration": [
+            {
+              "TransitionToIA": "AFTER_14_DAYS"
+            }
+          ],
+          "BackupPolicy": "ENABLED",
+          "FileSystemPolicy": null,
+          "AccessPoints": [],
+          "Metrics": {
+            "MeteredIOBytesAvgMibps": 18.5,
+            "MetricWindowDays": 14
+          }
+        }
+      ],
+      "subnets": [
+        {
+          "SubnetId": "subnet-a",
+          "AvailabilityZone": "eu-central-1a",
+          "VpcId": "vpc-main",
+          "Tags": {
+            "Name": "private-a"
+          }
+        },
+        {
+          "SubnetId": "subnet-b",
+          "AvailabilityZone": "eu-central-1b",
+          "VpcId": "vpc-main",
+          "Tags": {
+            "Name": "private-b"
+          }
+        },
+        {
+          "SubnetId": "subnet-c",
+          "AvailabilityZone": "eu-central-1c",
+          "VpcId": "vpc-main",
+          "Tags": {
+            "Name": "private-c"
+          }
+        },
+        {
+          "SubnetId": "subnet-x",
+          "AvailabilityZone": "eu-central-1a",
+          "VpcId": "vpc-other",
+          "Tags": {}
+        }
+      ],
+      "security_groups": [
+        {
+          "GroupId": "sg-clients",
+          "GroupName": "efs-clients",
+          "IpPermissions": [
+            {
+              "IpProtocol": "tcp",
+              "FromPort": 2049,
+              "ToPort": 2049,
+              "UserIdGroupPairs": [
+                {
+                  "GroupId": "sg-app"
+                }
+              ],
+              "IpRanges": [],
+              "Ipv6Ranges": []
+            }
+          ]
+        },
+        {
+          "GroupId": "sg-open",
+          "GroupName": "efs-legacy",
+          "IpPermissions": [
+            {
+              "IpProtocol": "tcp",
+              "FromPort": 2000,
+              "ToPort": 3000,
+              "IpRanges": [
+                {
+                  "CidrIp": "0.0.0.0/0"
+                }
+              ],
+              "Ipv6Ranges": []
+            }
+          ]
+        },
+        {
+          "GroupId": "sg-open-v6",
+          "GroupName": "efs-v6",
+          "IpPermissions": [
+            {
+              "IpProtocol": "-1",
+              "IpRanges": [],
+              "Ipv6Ranges": [
+                {
+                  "CidrIpv6": "::/0"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "eu-west-1": {
+      "filesystems": [
+        {
+          "FileSystemId": "fs-0a1b2c3d4e5f60005",
+          "Name": "dr-copy",
+          "Encrypted": true,
+          "KmsKeyId": "arn:aws:kms:eu-central-1:111122223333:key/abc",
+          "ThroughputMode": "bursting",
+          "ProvisionedThroughputInMibps": null,
+          "PerformanceMode": "generalPurpose",
+          "LifeCycleState": "available",
+          "CreationTime": "2023-04-01T09:12:00Z",
+          "SizeInBytes": {
+            "Value": 966367641600,
+            "ValueInIA": 21474836480,
+            "ValueInStandard": 944892805120
+          },
+          "Tags": {
+            "Name": "dr-copy"
+          },
+          "MountTargets": [
+            {
+              "MountTargetId": "fsmt-0010",
+              "SubnetId": "subnet-w1",
+              "AvailabilityZoneName": "eu-west-1a",
+              "IpAddress": "10.0.1.10",
+              "LifeCycleState": "available",
+              "SecurityGroups": [
+                "sg-clients"
+              ]
+            },
+            {
+              "MountTargetId": "fsmt-0011",
+              "SubnetId": "subnet-w2",
+              "AvailabilityZoneName": "eu-west-1b",
+              "IpAddress": "10.0.1.10",
+              "LifeCycleState": "available",
+              "SecurityGroups": [
+                "sg-clients"
+              ]
+            }
+          ],
+          "LifecycleConfiguration": [
+            {
+              "TransitionToIA": "AFTER_90_DAYS"
+            }
+          ],
+          "BackupPolicy": "DISABLED",
+          "FileSystemPolicy": null,
+          "AccessPoints": [],
+          "Metrics": {
+            "MeteredIOBytesAvgMibps": 0.4,
+            "MetricWindowDays": 14
+          }
+        }
+      ],
+      "subnets": [
+        {
+          "SubnetId": "subnet-w1",
+          "AvailabilityZone": "eu-west-1a",
+          "VpcId": "vpc-dr",
+          "Tags": {}
+        },
+        {
+          "SubnetId": "subnet-w2",
+          "AvailabilityZone": "eu-west-1b",
+          "VpcId": "vpc-dr",
+          "Tags": {}
+        },
+        {
+          "SubnetId": "subnet-w3",
+          "AvailabilityZone": "eu-west-1c",
+          "VpcId": "vpc-dr",
+          "Tags": {}
+        }
+      ],
+      "security_groups": []
+    }
+  }
+}

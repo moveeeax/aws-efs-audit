@@ -1,0 +1,123 @@
+{
+  "version": 1,
+  "generated_at": "2026-11-13T09:00:00Z",
+  "regions": {
+    "eu-central-1": {
+      "filesystems": [
+        {
+          "FileSystemId": "fs-0a1b2c3d4e5f60002",
+          "Name": "jenkins-home",
+          "Encrypted": true,
+          "KmsKeyId": "arn:aws:kms:eu-central-1:111122223333:key/abc",
+          "ThroughputMode": "bursting",
+          "ProvisionedThroughputInMibps": null,
+          "PerformanceMode": "generalPurpose",
+          "LifeCycleState": "available",
+          "CreationTime": "2023-04-01T09:12:00Z",
+          "SizeInBytes": {
+            "Value": 128849018880,
+            "ValueInIA": 102005473280,
+            "ValueInStandard": 26843545600
+          },
+          "Tags": {
+            "Name": "jenkins-home",
+            "team": "ci"
+          },
+          "MountTargets": [
+            {
+              "MountTargetId": "fsmt-0002",
+              "SubnetId": "subnet-a",
+              "AvailabilityZoneName": "eu-central-1a",
+              "IpAddress": "10.0.1.10",
+              "LifeCycleState": "available",
+              "SecurityGroups": [
+                "sg-clients"
+              ]
+            },
+            {
+              "MountTargetId": "fsmt-0003",
+              "SubnetId": "subnet-b",
+              "AvailabilityZoneName": "eu-central-1b",
+              "IpAddress": "10.0.1.10",
+              "LifeCycleState": "available",
+              "SecurityGroups": [
+                "sg-clients"
+              ]
+            },
+            {
+              "MountTargetId": "fsmt-0004",
+              "SubnetId": "subnet-c",
+              "AvailabilityZoneName": "eu-central-1c",
+              "IpAddress": "10.0.1.10",
+              "LifeCycleState": "available",
+              "SecurityGroups": [
+                "sg-clients"
+              ]
+            }
+          ],
+          "LifecycleConfiguration": [
+            {
+              "TransitionToIA": "AFTER_30_DAYS"
+            },
+            {
+              "TransitionToPrimaryStorageClass": "AFTER_1_ACCESS"
+            }
+          ],
+          "BackupPolicy": "ENABLED",
+          "FileSystemPolicy": null,
+          "AccessPoints": [],
+          "Metrics": {
+            "MeteredIOBytesAvgMibps": 3.4,
+            "MetricWindowDays": 14
+          }
+        }
+      ],
+      "subnets": [
+        {
+          "SubnetId": "subnet-a",
+          "AvailabilityZone": "eu-central-1a",
+          "VpcId": "vpc-main",
+          "Tags": {
+            "Name": "private-a"
+          }
+        },
+        {
+          "SubnetId": "subnet-b",
+          "AvailabilityZone": "eu-central-1b",
+          "VpcId": "vpc-main",
+          "Tags": {
+            "Name": "private-b"
+          }
+        },
+        {
+          "SubnetId": "subnet-c",
+          "AvailabilityZone": "eu-central-1c",
+          "VpcId": "vpc-main",
+          "Tags": {
+            "Name": "private-c"
+          }
+        }
+      ],
+      "security_groups": [
+        {
+          "GroupId": "sg-clients",
+          "GroupName": "efs-clients",
+          "IpPermissions": [
+            {
+              "IpProtocol": "tcp",
+              "FromPort": 2049,
+              "ToPort": 2049,
+              "UserIdGroupPairs": [
+                {
+                  "GroupId": "sg-app"
+                }
+              ],
+              "IpRanges": [],
+              "Ipv6Ranges": []
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
